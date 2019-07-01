@@ -41,6 +41,7 @@ public class HomeController {
     @RequestMapping("/view/{id}")
     public String viewTask(@PathVariable("id") long id, Model model) {
         model.addAttribute("todo", ts.findById(id).get());
+        model.addAttribute("todos", ts.findAll());
         return "show";
     }
 
@@ -52,7 +53,9 @@ public class HomeController {
 
     @RequestMapping("/complete/{id}")
     public String finishTask(@PathVariable("id") long id) {
-        ts.deleteById(id);
+        Todo td = ts.findById(id).get();
+        td.setCompleted(true);
+        ts.save(td);
         return "redirect:/";
     }
 }

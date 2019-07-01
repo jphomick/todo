@@ -7,6 +7,7 @@
 <body>
 <form action="#" th:action="@{/submit}" th:object="${todo}" method="post">
     <input type="hidden" th:field="*{id}" />
+    <input type="hidden" th:field="*{completed}" /><br />
     Task: <input type="text" th:field="*{name}" /><br />
     <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br />
     Due Date: <input type="text" th:field="*{date}" /><br />

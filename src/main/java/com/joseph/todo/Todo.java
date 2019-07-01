@@ -1,7 +1,5 @@
 package com.joseph.todo;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +24,9 @@ public class Todo {
     @NotNull
     @Size(min = 1)
     private String priority;
+
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private boolean completed;
 
     public long getId() {
         return id;
@@ -57,5 +58,13 @@ public class Todo {
 
     public void setPriority(String priority) {
         this.priority = priority;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 }

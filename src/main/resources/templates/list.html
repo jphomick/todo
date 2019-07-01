@@ -17,8 +17,11 @@
         <td th:text="${task.date}"></td>
         <td th:text="${task.priority}"></td>
         <td>
+            <img th:if="${task.completed}" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/215/heavy-check-mark_2714.png"/>
+        </td>
+        <td>
             <a th:href="@{/view/{id}(id=${task.id})}">View</a>
-            <a th:href="@{/update/{id}(id=${task.id})}">Update</a> 
+            <a th:href="@{/update/{id}(id=${task.id})}">Update</a>
             <a th:href="@{/complete/{id}(id=${task.id})}">Complete</a>
         </td>
     </tr>
