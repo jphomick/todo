@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span th:text="${todo.name}"></span><br />
+Complete by: <span th:text="${todo.date}"></span><br />
+Priority: <span th:text="${todo.priority}"></span><br /><br />
+<a href="/">Return to tasks</a>
+</body>
+</html>
